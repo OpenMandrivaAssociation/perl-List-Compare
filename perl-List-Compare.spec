@@ -1,6 +1,6 @@
 %define module	List-Compare
 %define name	perl-%{module}
-%define version 0.34
+%define version 0.35
 %define release %mkrel 1
 
 Name:		%{name}
@@ -11,11 +11,9 @@ License:	GPL or Artistic
 Group:		Development/Perl
 Url:            http://search.cpan.org/dist/%{module}
 Source:         http://www.cpan.org/modules/by-module/List/%{module}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-%{version}
-%if %{mdkversion} < 1010
-Buildrequires:	perl-devel
-%endif
+Buildrequires:	perl(IO::CaptureOutput)
 Buildarch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This module allows to compare elements of two or more lists.
